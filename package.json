@@ -1,10 +1,13 @@
 {
   "name": "wmg",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "A Commandline Online RPG",
-  "main": "wmg.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository" : {
+      "type" : "git",
+      "url" : "https://github.com/Arvraepe/wmg.git"
   },
   "keywords": [
     "RPG",
@@ -12,6 +15,10 @@
     "Commandline",
     "Text-based"
   ],
+  "preferGlobal": true,
+  "bin": {
+      "wmg": "wmg.js"
+  },
   "author": "Arne Van Raepenbusch <arvraepe@gmail.com>",
   "license": "ISC"
 }
