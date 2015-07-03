@@ -6,18 +6,3 @@ else {
          if (argv[0] === "help") { require('./src/commands/HelpCommand.js').execute(argv.slice(1)); }
     else if (argv[0] === "new") { require('./src/commands/RegisterCommand.js').execute(argv.slice(1)); }
 }
-
-process.argv[0]
-
-//C.post('/register', { username: 'arninja', password: 'test' }, function (err, req, res, obj){
-//    if (err) { console.error(err); } else {
-//        console.log('success', obj);
-//    }
-//});
-
-
-C.post('/authenticate', { username: 'testuser', password: 'test' }, function (err, req, res, obj){
-    if (err) { console.error(err); } else {
-        console.log('success', obj);
-    }
-});
