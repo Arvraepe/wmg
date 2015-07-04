@@ -9,6 +9,7 @@ exports.execute = function (argv) {
             } else {
                 console.error('Your login attempt failed. Message: ', result.messages[0].message);
             }
+            process.exit(0);
         });
     });
 };

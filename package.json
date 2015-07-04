@@ -1,7 +1,7 @@
 {
   "name": "wmg",
-  "version": "0.0.2",
-  "description": "A Commandline Online RPG",
+  "version": "0.0.9",
+  "description": "A Commandline Foolin around",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,19 +9,15 @@
     "type": "git",
     "url": "https://github.com/Arvraepe/wmg.git"
   },
-  "keywords": [
-    "RPG",
-    "Game",
-    "Commandline",
-    "Text-based"
-  ],
+  "keywords": ["Stuff", "Foolin"],
+  "target": "main",
   "preferGlobal": true,
   "bin": {
     "wmg": "wmg.js"
   },
   "author": "Arne Van Raepenbusch <arvraepe@gmail.com>",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "prompt": "^0.2.14",
     "restify": "^3.0.3",
     "underscore": "^1.8.3"
