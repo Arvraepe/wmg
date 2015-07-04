@@ -12,6 +12,8 @@ exports.execute = function (argv) {
                 }
                 process.exit(0);
             });
+        } else {
+            console.log('The passwords you provided didn\'t match, please try again.');
         }
     });
 };
