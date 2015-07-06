@@ -10,7 +10,8 @@ exports.request = function (config) {
         else { config.params = { session: Config.session }; }
     }
 
-    var paramStr = _.keys(config.params).map(function (key) {  }).join('&');
+    var paramStr = _.keys(config.params).map(function (key) { return key + "=" + config.params[key]; }).join('&');
+
     var path = config.path + ( paramStr ? '?'+paramStr : '' );
     var callback = function (err, req, res, obj) {
         if (err) { if (config.onError) config.onError(); else console.error('Something was wrong with the connection ', err); }
