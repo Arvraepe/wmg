@@ -14,6 +14,7 @@ var config = fs.readFile('./config', "utf-8", function (err, data) {
         else if (argv[0] === "login")   { execute(require('./src/commands/LoginCommand.js')); }
         else if (argv[0] === "whoami")   { execute(require('./src/commands/WhoamiCommand.js')); }
         else if (argv[0] === "config")   { execute(require('./src/commands/ConfigCommand.js')); }
+        else if (argv[0] === "quest")   { execute(require('./src/commands/QuestCommand.js')); }
         else { console.log('Command ', argv[0], ' could not be found. Try ', 'wmg help'.green,' for more info'); }
     }
 
