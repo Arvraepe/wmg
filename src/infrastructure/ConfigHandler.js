@@ -1,7 +1,7 @@
 var fs = require('fs');
 var _ = require('underscore');
 
-var file = './config';
+var file = './config.json';
 
 function getConfigSync () {
     return JSON.parse(fs.readFileSync(file, "utf-8"));

@@ -1,8 +1,8 @@
 var restify = require('restify');
 var _ = require('underscore');
 
-var C = restify.createJsonClient({ url: 'http://0.0.0.0:8080' });
 var Config = require('../infrastructure/ConfigHandler').readConfigSync();
+var C = restify.createJsonClient({ url: 'http://' + (Config.server || '0.0.0.0:8080') });
 
 exports.request = function (config) {
     if (Config.session && !config.noAuth) {
