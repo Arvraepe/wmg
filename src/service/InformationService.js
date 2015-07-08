@@ -9,4 +9,14 @@ function whoami (config) {
     });
 }
 
+function status (config) {
+    Service.request({
+        method: 'get',
+        path: '/info/status',
+        onSuccess: config.onSuccess,
+        onFail: config.onFail
+    });
+}
+
 exports.whoami = whoami;
+exports.status = status;
