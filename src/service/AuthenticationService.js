@@ -1,22 +1,24 @@
 var Service = require('../infrastructure/ServiceHandler.js');
 
-function register (info, callback) {
+function register (config) {
     Service.request({
         noAuth: true,
         method: 'post',
         path: '/register',
-        body: { username: info.username, password: info.password },
-        onSuccess: callback
+        body: { username: config.info.username, password: config.info.password },
+        onSuccess: config.callback
     });
 }
 
-function login (info, callback) {
+function login (config) {
     Service.request({
         noAuth: true,
         method: 'post',
         path: '/authenticate',
-        body: { username: info.username, password: info.password },
-        onSuccess: callback
+        body: { username: config.info.username, password: config.info.password },
+        onSuccess: config.onSuccess,
+        onFail: config.onFail,
+        onError: config.onError
     });
 }
 
