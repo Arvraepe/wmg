@@ -18,7 +18,7 @@ exports.request = function (config) {
         else {
             if (obj.success && config.onSuccess) config.onSuccess(obj.data);
             if (!obj.success && config.onFail) config.onFail(obj.messages);
-            else if (!obj.success) {
+            else if (!obj.success && obj.messages) {
                 console.log (
                     obj.messages.map(function (message){ return message.level + ': ' + message.message; }).join(',')
                 );
