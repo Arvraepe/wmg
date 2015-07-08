@@ -8,11 +8,12 @@ function last (callback) {
     });
 }
 
-function list (callback) {
+function list (config) {
     Service.request({
         method: 'get',
         path: '/quest/list',
-        onSuccess: callback
+        onSuccess: config.onSuccess,
+        onFail: function () { console.error(arguments); }
     });
 }
 
