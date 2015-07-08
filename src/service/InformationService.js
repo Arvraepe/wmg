@@ -1,10 +1,11 @@
 var Service = require('../infrastructure/ServiceHandler.js');
 
-function whoami (callback) {
+function whoami (config) {
     Service.request({
         method: 'get',
         path: '/info/whoami',
-        onSuccess: callback
+        onSuccess: config.onSuccess,
+        onFail: config.onFail
     });
 }
 

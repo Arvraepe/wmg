@@ -16,7 +16,13 @@ exports.request = function (config) {
     var callback = function (err, req, res, obj) {
         if (err) { if (config.onError) config.onError(); else console.error('Something was wrong with the connection ', err); }
         else {
-            if (config.onSuccess) config.onSuccess(obj);
+            if (obj.success && config.onSuccess) config.onSuccess(obj.data);
+            if (!obj.success && config.onFail) config.onFail(obj.messages);
+            else if (!obj.success) {
+                console.log (
+                    obj.messages.map(function (message){ return message.level + ': ' + message.message; }).join(',')
+                );
+            }
         }
     };
 
