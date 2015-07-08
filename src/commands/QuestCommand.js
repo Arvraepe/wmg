@@ -24,9 +24,12 @@ function last (argv) {
 }
 
 function start (argv) {
-    QuestService.start(argv[0], function (data) {
-        console.log('Functionality to be implemented ', data);
-        process.exit(0);
+    QuestService.start({
+        inputId: argv[0],
+        onSuccess: function (data) {
+            console.log('Functionality to be implemented ', data);
+            process.exit(0);
+        }
     });
 }
 

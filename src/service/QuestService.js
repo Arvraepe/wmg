@@ -12,17 +12,16 @@ function list (config) {
     Service.request({
         method: 'get',
         path: '/quest/list',
-        onSuccess: config.onSuccess,
-        onFail: function () { console.error(arguments); }
+        onSuccess: config.onSuccess
     });
 }
 
-function start (id, callback) {
+function start (config) {
     Service.request({
         method: 'post',
         path: '/quest/start',
-        body: { id: id },
-        onSuccess: callback
+        body: { inputId: config.inputId },
+        onSuccess: config.onSuccess
     });
 }
 

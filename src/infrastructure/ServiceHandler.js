@@ -20,8 +20,9 @@ exports.request = function (config) {
             if (!obj.success && config.onFail) config.onFail(obj.messages);
             else if (!obj.success && obj.messages) {
                 console.log (
-                    obj.messages.map(function (message){ return message.level + ': ' + message.message; }).join(',')
+                    obj.messages.map(function (message){ return message.message; }).join('\n')
                 );
+                process.exit(0);
             }
         }
     };
