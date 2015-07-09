@@ -27,7 +27,7 @@ function start (argv) {
     QuestService.start({
         inputId: argv[0],
         onSuccess: function (data) {
-            console.log('Functionality to be implemented ', data);
+            console.log('You successfully started a quest...');
             process.exit(0);
         }
     });
@@ -39,9 +39,11 @@ function list (argv) {
             console.log('The following quests are currently available to you: \n');
 
             data
+                .filter(function (quest) { return quest.state !== 'NOTIFIED' && quest.state !== 'FINISHED'; })
                 .sort(function (a, b) { return parseInt(a.inputId, 10) - parseInt(b.inputId, 10); })
                 .forEach(function (quest) {
-                    console.log(quest.inputId+'. '+quest.description);
+                    var isOngoingText = quest.state === 'PENDING' ? ' [ON GOING]'.green : '';
+                    console.log(quest.inputId+'. '+quest.description+isOngoingText);
                     console.log(
                         ' Level: ' +quest.level.toString().green+
                         ' Gold: '+quest.gold.toString().green+
